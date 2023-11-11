@@ -7,12 +7,9 @@ class Solution:
         window = []
 
         for i in range(k):
-            if not window:
-                window.append(nums[i])
-            else:
-                while window and nums[i] > window[-1]:
-                    window.pop()
-                window.append(nums[i])
+            while window and nums[i] > window[-1]:
+                window.pop()
+            window.append(nums[i])
         ret.append(window[0])
 
         for i in range(0, len(nums) - k):
